@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+    <h1>메일 발송 폼</h1>
+
+	
+	</br>
+	<h3> Google 메일로 보내기 </h3>
+	<form th:action ="@{/sendMailGmail}" th:object="${mail}" 
+		method ="post"> <!-- enctype="multipart/form-data" -->
+	
+		From
+		<input type="email" name="from" placeholder="abc@abc.com"/>
+		</br>
+		
+		To
+		<input type="email" name="to" placeholder="abc@abc.com"/>
+		</br>
+		
+		<!-- ToList
+		<input type="email" name="toList" placeholder="abc@abc.com"/>
+		</br> -->
+		
+		CC
+		<input type="email" name="cc" placeholder="abc@abc.com"/>
+		</br>
+		
+		<!--BCC
+		 <input type="email" name="bcc" placeholder="abc@abc.com"/>
+		</br> -->
+		
+		제목
+		<input type="text" name="subject"/>
+		</br>
+		
+		내용
+		</br>
+		<textarea rows="5" cols="30" name="contents"></textarea>
+		</br>
+		
+		첨부
+		<input multiple="multiple" type="file" name="fileName"/>
+		</br>
+		
+		보내기
+		<input type="submit" value="메일 전송">
+		</br>
+	</form>
+	
+	
+	</br>
+	</br>
+	<!-- <h3> Naver 메일로 보내기 </h3>
+	<form th:action ="@{/sendMailNaver}" th:object="${mail}" method ="post">
+	
+		From
+		<input type="email" name="from" value="supersexyhan@naver.com"/>
+		</br>
+		
+		To
+		<input type="email" name="to" placeholder="abc@abc.com"/>
+		</br>
+		
+		CC
+		<input type="email" name="cc" placeholder="abc@abc.com"/>
+		</br>
+		
+		BCC
+		<input type="email" name="bcc" placeholder="abc@abc.com"/>
+		</br>
+		
+		제목
+		<input type="text" name="subject"/>
+		</br>
+		
+		내용
+		</br>
+		<textarea rows="5" cols="30" name="contents"></textarea>
+		</br>
+		
+		첨부
+		</br>
+		
+		보내기
+		<input type="submit" value="메일 전송">
+		</br>
+	</form> -->
+
+</body>
+</html>

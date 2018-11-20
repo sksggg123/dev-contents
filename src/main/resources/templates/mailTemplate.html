@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:remove="all">Thymeleaf 메일 템플릿</title>
+	<meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
+</head>
+<body>
+	
+	<p th:if="${subject.length() > 20}">
+		메일 제목이 20 chars 이상인 경우 이 메세지 보임!
+	</p>
+	
+	<!-- <span th:text="${toAddress}"></span>
+	<p th:text="${testMessage}"> </p> -->
+	
+	<img src="cid:headerImg"/>
+	<p> [( ${toAddress} )] 님  가입을 환영합니다. </p>
+	<p> ====== 아래는 메일폼에서 직접 작성한 메세지 ===== </p>
+	[( ${testMessage} )]
+	
+	<!-- <p>
+		<img th:src="|cid:${fileName}|" />
+	</p> -->
+</body>
+</html>
