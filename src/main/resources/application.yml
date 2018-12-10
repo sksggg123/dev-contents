@@ -12,3 +12,7 @@
 #          auth: true
 #          starttls:
 #            enable: true
+spring:
+  h2:
+    console:
+      enabled: true

@@ -72,7 +72,7 @@ public class MailService {
 			MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
 			try {
-				helper.setFrom(new InternetAddress("rhep0820@gmail.com"));
+				helper.setFrom(new InternetAddress("sksggg123@gmail.com"));
 				helper.setTo(to);
 				helper.setSubject(subject);
 				if(cc != null) { helper.setCc(cc); }
@@ -108,49 +108,5 @@ public class MailService {
 		
 		//return result;
 	}
-
-	
-	/**
-	 * Naver로 보내기
-	 * @param mail
-	 */
-//	public ResultModel naverSender(MailModel mail)	{
-//		
-//		ResultModel result = new ResultModel(CommonConstants.ERR_NULL_PARAMS);
-//		
-//		InternetAddress to = mail.getTo();
-//		String subject = mail.getSubject();
-//		String contents = mail.getContents();
-//		InternetAddress cc = mail.getCc();
-//		InternetAddress bcc = mail.getBcc();
-//		
-//		if(to != null && !subject.equals("") && !contents.equals("")) {
-//			
-//			MimeMessage message = naverSender.createMimeMessage();
-//			MimeMessageHelper helper = new MimeMessageHelper(message);
-//
-//			try {
-//				helper.setFrom(new InternetAddress("메일주소@naver.com"));
-//				helper.setTo(to);
-//				helper.setSubject(subject);
-//				helper.setText(contents);
-//				if(cc != null)
-//					helper.setCc(cc);
-//				if(bcc != null)
-//					helper.setBcc(bcc);
-//				
-//			}catch (MessagingException e) {
-//				e.printStackTrace();
-//				return result;
-//			}
-//			
-//			naverSender.send(message);
-//			result.setResult(CommonConstants.OK);	
-//		}
-//		
-//		return result;
-//	}
-
-
 	
 }

@@ -19,8 +19,8 @@ public class MailConfig {
 		mailSender.setPort(587);
 		mailSender.setProtocol("smtp");
 		mailSender.setDefaultEncoding("UTF-8");
-		mailSender.setUsername(""); // 메일 주소
-		mailSender.setPassword(""); // 메일 비번
+		mailSender.setUsername("sksggg123@gmail.com"); // 메일 주소
+		mailSender.setPassword("quddbs37979"); // 메일 비번
 		
 		Properties prop = new Properties();
 		prop.put("mail.smtp.auth", "true");

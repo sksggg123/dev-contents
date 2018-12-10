@@ -7,6 +7,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		//classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
 	}
 }
 
@@ -14,6 +15,11 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+war {
+    baseName = 'goquality'
+    version = '0.0.1-SNAPSHOT'
+}
 
 group = 'com.goquality'
 version = '0.0.1-SNAPSHOT'
@@ -23,11 +29,12 @@ repositories {
 	mavenCentral()
 }
 
+//ext['hibernate.version'] = '5.2.11.Final'
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-mail')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	//compile('org.springframework:spring-context-support')
+	compile('org.springframework.boot:spring-boot-devtools')
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-web')

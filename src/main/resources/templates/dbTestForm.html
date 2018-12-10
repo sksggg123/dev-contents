@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+    <h1>테스트 폼</h1>
+
+	
+	</br>
+	<form th:action ="@{/dbTestProc}" th:object="${Links}" 
+		method ="post"> <!-- enctype="multipart/form-data" -->
+	
+		Link
+		<input type="text" name="link"/>
+		</br>
+		Title
+		<input type="text" name="title"/>
+		</br>
+		
+		보내기
+		<input type="submit" value="메일 전송">
+		</br>
+	</form>
+	
+	
+	</br>
+	</br>
+
+</body>
+</html>

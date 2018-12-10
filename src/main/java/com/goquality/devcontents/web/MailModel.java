@@ -6,6 +6,8 @@ import java.util.Map;
 import javax.mail.internet.InternetAddress;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 public class MailModel {
@@ -20,6 +22,7 @@ public class MailModel {
 	private InternetAddress bcc;
 	private String contentType = "text/html";
 	private String template;
+	private String fileName;
 	//본문 첨부용 이미지 (system file path name, img element id)
 	private List<Map<String, String>> imageList;
 	//첨부파일 (system file path name, download filename)
@@ -27,5 +30,4 @@ public class MailModel {
 //	private Map<String, Object> model;
 //	private VelocityContext velocityContext;
 	
-	private String fileName;
 }
