@@ -2,6 +2,7 @@ package com.goquality.devcontents.kakaobot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +30,11 @@ public class KakaoBotController {
 	
 	@ResponseBody
 	@PostMapping("/dbTestProc")
-	public String saveLinks(@ModelAttribute("LinksSaveRequestDTO") LinksSaveRequestDTO dto){
+	public String saveLinks(@ModelAttribute("LinksSaveRequestDTO") LinksSaveRequestDTO dto, Model model){
         linksService.save(dto);
         
-        return linksService.findAllDesc().toString();
+        model.addAttribute("link", linksService.findAllDesc());
+        
+        return "dbTestListForm";
     }
 }
