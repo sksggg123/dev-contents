@@ -1,0 +1,2 @@
+insert into links (id, link, title, created_date, modified_date) values (0, 'https://sksggg123.tistory.com', '권군 티스토리', now(), now());
+insert into links (id, link, title, created_date, modified_date) values (1, 'https://github.com/sksggg123', '권군 깃헙', now(), now());

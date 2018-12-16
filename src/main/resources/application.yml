@@ -1,23 +1,31 @@
-#spring:
-#  mail:
-#    host: smtp.gmail.com
-#    username: medicc900@gmail.com #클라우드캐시 계정은 도메인관리자(Ken?)가 보안설정해줘야 사용가능
-#    password: 
-#    port: 587
-#    protocol: smtp
-#    default-encoding: UTF-8
-#    properties:
-#      mail:
-#        smtp:
-#          auth: true
-#          starttls:
-#            enable: true
-# Test
 spring:
+  profiles:
+    active: real
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+# local
+---
+spring:
+  profiles: local
+  datasource:
+    data: classpath:data-h2.sql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console:
+      enabled: true  
+    
+# real
+---
+spring:
+  profiles: real
   datasource:
     url: jdbc:mariadb://sksggg123-webserver-rds.csrq1r9scrhy.ap-northeast-2.rds.amazonaws.com:3306/sksggg123
     username: sksggg123
     password: qud37979!
-    driver-class-name:  org.mariadb.jdbc.Driver  
-    
-    
+    driver-class-name: org.mariadb.jdbc.Driver

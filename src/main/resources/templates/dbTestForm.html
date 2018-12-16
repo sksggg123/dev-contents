@@ -25,9 +25,25 @@
 		</br>
 	</form>
 	
+	</br>
+	</br>
+	</br>
 	
-	</br>
-	</br>
+	<h1> Repository List </h1>
 
+	
+	<table>
+      <tr>
+      	<th>Title</th>
+      	<th>Link</th>
+      	<!-- <th>Date</th> -->
+      </tr>
+      <tr th:each="links : ${link}">
+      	<th th:text="${links.title}">Title</th>
+      	<th th:text="${links.link}">Link</th>
+      	<!-- <th th:text="${#temporals.format(links.created_Date, 'yyyy-mm-dd')}">Date</th> -->
+      </tr>
+    </table>
+	
 </body>
 </html>

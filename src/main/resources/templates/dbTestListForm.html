@@ -6,33 +6,22 @@
     <title></title>
 </head>
 <body>
-    <h1>리스트 폼</h1>
+    
+    <h1> Repository List </h1>
 
 	
 	<table>
-        <thead >
-            <tr>
-                <th>게시글번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>최종수정일</th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-        {{#each posts}}
-            <tr>
-                <td>{{id}}</td>
-                <td>{{title}}</td>
-                <td>{{author}}</td>
-                <td>{{modifiedDate}}</td>
-            </tr>
-        {{/each}}
-        </tbody>
+      <tr>
+      	<th>Title</th>
+      	<th>Link</th>
+      	<!-- <th>Date</th> -->
+      </tr>
+      <tr th:each="links : ${link}">
+      	<th th:text="${links.title}">Title</th>
+      	<th th:text="${links.link}">Link</th>
+      	<!-- <th th:text="${#temporals.format(links.created_Date, 'yyyy-mm-dd')}">Date</th> -->
+      </tr>
     </table>
 	
-	
-	</br>
-	</br>
-
 </body>
 </html>
