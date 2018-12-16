@@ -12,7 +12,9 @@
 #          auth: true
 #          starttls:
 #            enable: true
+# Test
 spring:
-  h2:
-    console:
-      enabled: true
+  profiles:
+    active: local # 기본환경
+    
+    
