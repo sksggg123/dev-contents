@@ -14,8 +14,6 @@
 #            enable: true
 # Test
 spring:
-  profiles:
-    active: local # 기본환경
   datasource:
     url: jdbc:mariadb://sksggg123-webserver-rds.csrq1r9scrhy.ap-northeast-2.rds.amazonaws.com:3306/sksggg123
     username: sksggg123
