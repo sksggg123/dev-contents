@@ -22,10 +22,5 @@ spring:
     
 # real
 ---
-spring:
-  profiles: real
-  datasource:
-    url: jdbc:mariadb://sksggg123-webserver-rds.csrq1r9scrhy.ap-northeast-2.rds.amazonaws.com:3306/sksggg123
-    username: sksggg123
-    password: qud37979!
-    driver-class-name: org.mariadb.jdbc.Driver
+spring.profiles: real
+spring.profiles.include: real-db
