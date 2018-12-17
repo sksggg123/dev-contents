@@ -20,13 +20,6 @@ public class MailController {
 	@Resource
 	private MailService  mailService;
 	
-//	private Environment env;
-//	
-//	@GetMapping("/profile")
-//	public String getProfiles() {
-//		return Arrays.stream(env.getActiveProfiles()).findFirst().orElse("");
-//	}
-
 	/**
 	 * 메일 작성 폼
 	 * @return
