@@ -13,7 +13,6 @@ public class DevContentsApplication {
 			+ "/home/ec2-user/app/git/config/goquality/real-application.yml";
 	
 	public static void main(String[] args) {
-//		SpringApplication.run(DevContentsApplication.class, args);
 		new SpringApplicationBuilder(DevContentsApplication.class).properties(APPLICATION_LOCATIONS).run(args);
 		
 	}
