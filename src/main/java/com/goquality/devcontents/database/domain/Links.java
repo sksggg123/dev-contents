@@ -3,6 +3,7 @@ package com.goquality.devcontents.database.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AccessLevel;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Links extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(length = 4000, nullable = false)
