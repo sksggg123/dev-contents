@@ -5,6 +5,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        id:
+          new_generator_mappings: false
+        
 
 # local 환경
 ---
