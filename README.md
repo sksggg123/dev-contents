@@ -12,4 +12,5 @@
 ```java
 	nohup java -jar *.jar
 ```
->이렇게 application을 실행 후 정상기동이 되면 ssh로 접속한 터미널을 종료 시켜도 application은 죽지않고 살아 있다.  
+>이렇게 application을 실행 후 정상기동이 되면 ssh로 접속한 터미널을 종료 시켜도 application은 죽지않고 살아 있다. 
+ 
