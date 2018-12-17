@@ -10,7 +10,7 @@ public class DevContentsApplication {
 	
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
 			+ "classpath:application.yml,"
-			+ "/app/config/goquality/real-application.yml";
+			+ "/home/ec2-user/app/git/config/goquality/real-application.yml";
 	
 	public static void main(String[] args) {
 //		SpringApplication.run(DevContentsApplication.class, args);
