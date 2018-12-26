@@ -31,9 +31,9 @@ public class KakaoBotController {
 	@RequestMapping(value = "/dbTest", method = RequestMethod.GET)
 	public String dbTest(final Model model) throws IOException
 	{
-//		model.addAttribute("link", linkService.findAllDesc());
-		CategoryVO categories = category.getCategoryList();
-		model.addAttribute("categories", category.getYml());
+		model.addAttribute("link", linkService.findAllDesc());
+//		CategoryVO categories = category.getCategoryList();
+//		model.addAttribute("categories", category.getYml());
 		return "dbTestForm";
 	}
 	
