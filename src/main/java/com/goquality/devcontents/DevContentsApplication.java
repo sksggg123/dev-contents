@@ -10,10 +10,15 @@ public class DevContentsApplication {
 	
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
 			+ "classpath:application.yml,"
-			+ "/home/ec2-user/app/git/config/goquality/real-application.yml";
+			+ "/home/ec2-user/app/git/config/config/goquality/real-application.yml";
+	
+	public static final String APPLICATION_LOCATIONS_STORAGE = "spring.config.location="
+			+ "classpath:application.yml,"
+			+ "/home/ec2-user/app/git/parsing-storage/category.yml";
 	
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(DevContentsApplication.class).properties(APPLICATION_LOCATIONS).run(args);
+//		new SpringApplicationBuilder(DevContentsApplication.class).properties(APPLICATION_LOCATIONS_STORAGE).run(args);
 		
 	}
 }

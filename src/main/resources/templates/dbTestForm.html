@@ -29,18 +29,25 @@
 	</br>
 	</br>
 	
-	<h1> Repository List </h1>
-
-	<table>
-      <tr>
-      	<th>Title</th>
-      	<th>Link</th>
-      	<!-- <th>Date</th> -->
-      </tr>
-      <tr th:each="cat : ${categories}">
-      	<th th:text="${cat.categoryName}">Title</th>
-      </tr>
-    </table>
+	<!-- th:object="${boardVO}" 이렇게 선언하면 내부 태크에서 프로퍼티로 값 접근이 가능하다. -->
+	<div class="box-body" th:object="${categories}">
+	<!-- th:field="*{bno}" 는 boardVO.bno값을 꺼내 자동으로 값을 설정하며, 이 form이 get이나 post로 컨트롤러에 전달되면 bno라는 이름으로 값이 전달된다. -->
+	  <div class="form-group">
+	    <label for="exampleInputBoardTitle">Title</label>
+	    <!-- th:value도 th:field는 boardVO.title값을 꺼내 자동으로 태그에 값을 설정한다, 그러나 이 form 태그가 get이나 post로 controller에 전달 되었을때 title이라는 이름으로 값전달이 되지 않는다. 만약 input 태그에 name 어트리뷰트가 지정되어 있다면, 전달이 된다.  -->
+	    <input th:value="*{categoryName}" type="text" class="form-control" id="exampleInputBoardTitle"  readonly="readonly">
+	  </div>
+	  <div class="form-group">
+	    <label>Content</label>
+	    <!-- 컨트롤러에서 전달된 값을 textarea에 값을 채우기 위해서는 아래처럼 설정해야 한다. th:field로 설정이 가능하긴 하나, 이렇게 설정한 경우 앞서 말했듯이 form액션이 발생했을때 아래 texteare 태그에 name 어트리뷰트가 없지만 자동으로 컨트롤러로 값이 전달된다. -->
+	    <!-- <textarea th:inline="text" class="form-control" rows="3" readonly="readonly">[[*{content}]]</textarea> -->
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputBoardWriter">Writer</label>
+	    <input th:value="*{categoryNum}" type="text"  class="form-control" id="exampleInputBoardWriter" readonly="readonly">
+	  </div>
+	</div>
+	
 	
 	<table>
       <tr>

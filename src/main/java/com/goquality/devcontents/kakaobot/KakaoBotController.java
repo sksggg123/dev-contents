@@ -1,5 +1,7 @@
 package com.goquality.devcontents.kakaobot;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,13 +26,14 @@ public class KakaoBotController {
 	
 	/**
 	 * 카카오 봇을 통한 DB CRUD
+	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/dbTest", method = RequestMethod.GET)
-	public String dbTest(final Model model)
+	public String dbTest(final Model model) throws IOException
 	{
 //		model.addAttribute("link", linkService.findAllDesc());
 		CategoryVO categories = category.getCategoryList();
-		model.addAttribute("categories", categories);
+		model.addAttribute("categories", category.getYml());
 		return "dbTestForm";
 	}
 	
