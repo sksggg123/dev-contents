@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.goquality.devcontents.database.dto.links.LinksSaveRequestDTO;
 import com.goquality.devcontents.database.service.LinksService;
+import com.goquality.devcontents.yml.service.CategoryService;
+import com.goquality.devcontents.yml.vo.CategoryVO;
 
 @Controller
 public class KakaoBotController {
@@ -17,13 +19,18 @@ public class KakaoBotController {
 	@Autowired
 	private LinksService linkService;
 	
+	@Autowired
+	private CategoryService category;
+	
 	/**
 	 * 카카오 봇을 통한 DB CRUD
 	 */
 	@RequestMapping(value = "/dbTest", method = RequestMethod.GET)
 	public String dbTest(final Model model)
 	{
-		model.addAttribute("link", linkService.findAllDesc());
+//		model.addAttribute("link", linkService.findAllDesc());
+		CategoryVO categories = category.getCategoryList();
+		model.addAttribute("categories", categories);
 		return "dbTestForm";
 	}
 	

@@ -31,6 +31,16 @@
 	
 	<h1> Repository List </h1>
 
+	<table>
+      <tr>
+      	<th>Title</th>
+      	<th>Link</th>
+      	<!-- <th>Date</th> -->
+      </tr>
+      <tr th:each="cat : ${categories}">
+      	<th th:text="${cat.categoryName}">Title</th>
+      </tr>
+    </table>
 	
 	<table>
       <tr>
