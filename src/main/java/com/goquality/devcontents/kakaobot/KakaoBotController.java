@@ -37,8 +37,6 @@ public class KakaoBotController {
 		return "dbTestForm";
 	}
 	
-//	@ResponseBody
-//	@PostMapping("/dbTestProc")
 	@RequestMapping(value = "/dbTestProc", method = RequestMethod.POST)
 	public String saveLinks(@ModelAttribute("LinksSaveRequestDTO") LinksSaveRequestDTO dto, Model model){
 		linkService.save(dto);
@@ -48,4 +46,12 @@ public class KakaoBotController {
         return "dbTestListForm";
     }
 	
+	@RequestMapping(value = "/categories", method = RequestMethod.GET)
+	public String yamlParsingPage(final Model model) throws IOException
+	{
+		//CategoryVO categories = category.getCategoryList();
+//		model.addAttribute("categories", category.getYml());
+		model.addAttribute("categories", category.getCategoryList());
+		return "categories";
+	}
 }

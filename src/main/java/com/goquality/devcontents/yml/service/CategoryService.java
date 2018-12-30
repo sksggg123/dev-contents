@@ -2,6 +2,7 @@ package com.goquality.devcontents.yml.service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -30,7 +31,6 @@ public class CategoryService {
 			ObjectMapper mapper = new ObjectMapper();
 			catVO = mapper.readValue(new File("/home/ec2-user/app/git/parsing-storage/category.yml"), CategoryVO.class);
 			
-			
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -54,4 +54,5 @@ public class CategoryService {
 		
 		
 	}
+	
 }
