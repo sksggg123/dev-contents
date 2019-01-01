@@ -50,7 +50,7 @@ public class CategoryService {
 		hm = yml.load(new FileInputStream(new File(resourceLoader.getResource(APPLICATION_LOCATIONS_STORAGE).getURI().getPath())));
 		sm = (HashMap<String, String>) hm.get("categoryName");
 		
-		return sm.get("categoryName");
+		return sm.get("categoryName"); 
 		
 		
 	}
