@@ -33,7 +33,7 @@ public class CategoryService {
 			
 		}catch (Exception e) {
 			// TODO: handle exception
-		} 
+		}
 	
 		return catVO; 
 	}
