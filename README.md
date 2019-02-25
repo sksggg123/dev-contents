@@ -11,6 +11,11 @@
 >그렇다면 터미널에서 jar 실행 후 터미널을 종료해도 application이 종료가 되지 않기 위해서는 아래의 명령어로 application을 실행시키면 된다.!  
 ```java
 	nohup java -jar *.jar
+
+	# AWS에 실제 등록한 shell
+	REPOSITORY=/home/ec2-user/app/git
+	JAR_NAME=$(ls $REPOSITORY/ |grep 'dev-contents' |tail -n 1)
+	nohup java -jar -Dspring.profiles.active=real $REPOSITORY/$JAR_NAME &
 ```
 >이렇게 application을 실행 후 정상기동이 되면 ssh로 접속한 터미널을 종료 시켜도 application은 죽지않고 살아 있다. 
 
